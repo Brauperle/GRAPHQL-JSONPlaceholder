@@ -1,0 +1,26 @@
+{
+  "name": "api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "api:start": "tsc && node ./dist",
+    "api:start:ts": "ts-node index",
+    "api:generate": "graphql-codegen --config ./codegen.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Brauperle/GRAPHQL-JSONPlaceholder.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Brauperle/GRAPHQL-JSONPlaceholder/issues"
+  },
+  "homepage": "https://github.com/Brauperle/GRAPHQL-JSONPlaceholder#readme",
+  "dependencies": {
+    "@apollo/server": "^4.4.0",
+    "ts-node": "^10.9.1"
+  }
+}
