@@ -1,26 +1,29 @@
-import { fileURLToPath } from 'url';
-import { dirname } from 'path';
-import { readFileSync } from 'fs';
-import { ApolloServer } from '@apollo/server';
-import { startStandaloneServer } from '@apollo/server/standalone';
-import { Resolvers } from './resolvers-types'
+import { fileURLToPath } from "url";
+import { dirname } from "path";
+import { readFileSync } from "fs";
+import { ApolloServer } from "@apollo/server";
+import { startStandaloneServer } from "@apollo/server/standalone";
+import { Resolvers } from "./resolvers-types";
 
-import { POSTS, USERS } from './db';
+import { POSTS, USERS } from "./db";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
 // The GraphQL schema
-const typeDefs = readFileSync(
-  `${__dirname}/schema.graphql`,
-  { encoding: 'utf-8' }
-);
+const typeDefs = readFileSync(`${__dirname}/schema.graphql`, {
+  encoding: "utf-8",
+});
 
 // A map of functions which return data for the schema.
 const resolvers: Resolvers = {
   Query: {
-    posts(){ return POSTS },
-    users(){ return USERS },
+    posts() {
+      return POSTS;
+    },
+    users() {
+      return USERS;
+    },
   },
 };
 
